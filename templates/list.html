@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Le Fast.</title>
+	<meta charset="UTF-8">
+        	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="../static/css/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/css/MainR.css">
+      <link rel="stylesheet" href="../static/css/list.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+  </head>
+  <body>
+    <div class="container" id="navdiv">
+	  <nav>
+		<h1 id="navlogo">Le Fast<span>.</span></h1>
+	    <ul id="navlist">
+		  <li class="navitem"><a class="itemA" href="MainR.html" style="text-decoration:none">Home</a></li>
+		  <li class="navitem"><a class="itemA" href="#" style="text-decoration:none">Map</a></li>
+		  <li class="navitem"><a class="itemA" href="#" style="text-decoration:none">Feedback</a></li>
+		  <li class="navitem"><a class="itemA" href="#" style="text-decoration:none">E-Scooter</a></li>
+		  <li class="navitem"><a class="itemA" href="#" style="text-decoration:none">Sponsor Us!</a></li>
+		</ul>
+		<button id="modalopen"><i class="fa fa-bars fa-2x"></i></button>
+	  </nav>
+	</div>
+	<div id="sidemodal">
+	  <div id="sidemodalstuff" class="w3-animate-right">
+	    <h1 id="modalnavlogo">Le Fast<span>.</span></h1>
+        <span id="closemodal" class="modalitemhead">&times;</span>
+		<ul id="modallist"><hr>
+	      <li><a href="#" style="text-decoration:none">Home</a></li><hr>
+	      <li><a href="#" style="text-decoration:none">Map</a></li><hr>
+	      <li><a href="{{ url_for('feedback') }}" style="text-decoration:none">Feedback</a></li><hr>
+	      <li><a href="{{ url_for('EScooter') }}" style="text-decoration:none">E-Scooter</a></li><hr>
+	      <li><a href="#" style="text-decoration:none">Sponsor Us!</a></li><hr>
+		</ul>
+	  </div>
+	</div>
+	<div class="container mx-auto" id="sectionNone">
+             <h2 id = "headingFeedbacks">Feedbacks</h2>
+      {% if messages %}
+        <ul class = "helloWorld">
+          {% for message in messages %}
+              <h5 id = "namae">Name: {{ messages[message].who }}</h5>
+              <p id = "feed">Feedbacks: {{ messages[message].body }}</p>
+				<div>
+                    <small>Posted on: {{ timestamp.strftime("%A, %d %B %Y at %H:%M") }} By: {{ messages[message].who }}</small>
+                </div>
+          {% endfor %}
+        </ul>
+      {% else %}
+        No messages!
+      {% endif %}
+		<br>
+		<br>
+      <a href="{{ url_for('EScooter') }}" id = "backtomainPage">Back To Homepage!</a>
+	</div>
+  </body>
+  <footer>
+  	<script type="text/javascript" src="js/MainR.js"></script>
+  </footer>
+</html>

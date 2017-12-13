@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../static/js/modal.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/feedback.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+    <div class = "container">
+        <h1 id="webpageFeedback">Feedback For Our Webpages?</h1>
+        <h1 id="feedback">Feedback For Our E-Scooters?</h1>
+    </div>
+    <br>
+    <div id="welcome">
+        <img id="feedbackImage" class="hello" src="../static/images/feedback-company.png">
+        <img id="feedbackImage1" class="hello" src="../static/images/e-scooter.png">
+    </div>
+    <div class = "button1">
+        <a class="ghost" id="feedback1" data-toggle="modal" data-target="#myModal">Get Started</a>
+    </div>
+    <div class="button2">
+        <a class="ghost" id="webpageFeedback1" href="http://127.0.0.1:5000/login">Get Started</a>
+    </div>
+    </div>
+    <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Feedbacks - E-Scooter</h4>
+      </div>
+      <div class="modal-body">
+        	<div class="container mx-auto" id="section21">
+		<h4 class = "byeWorld">Leave a feedback for our E-Scooter Webpage</h4>
+		<p class = "byeWorld">
+		  You can leave me a feedback below, or see feedbacks people have left me <a href="{{ url_for('messages') }}">here</a>
+		</p>
+		<div class="large-8 columns">
+		<form action="/submit_message" method="post">
+			<h3 class = "helloWorld">Full-Name:</h3>
+		  <input type="text" placeholder="Full-Name" name="who">
+			<br>
+			<h3 class = "helloWorld">Feedbacks:</h3>
+		  <textarea placeholder="Enter your feedbacks here" name="message" cols="50" rows="4"></textarea>
+		  <br>
+			<input type="submit" value="Submit">
+		</form>
+		</div>
+	</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

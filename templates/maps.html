@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Le Fast</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/css/maps.css">
+
+  </head>
+  <body>
+    <div class="container" id="navdiv">
+	  <nav>
+		<h1 id="navlogo">Le Fast<span></span></h1>
+	    <ul id="navlist">
+		  <li class="navitem"><a class="itemA" href="maps.html" style="text-decoration:none">Home</a></li>
+		  <li class="navitem"><a class="itemA" href="#" style="text-decoration:none">Map</a></li>
+		  <li class="navitem"><a class="itemA" href="#" style="text-decoration:none">Feedback</a></li>
+		  <li class="navitem"><a class="itemA" href="#" style="text-decoration:none">E-Scooter</a></li>
+		  <li class="navitem"><a class="itemA" href="#" style="text-decoration:none">Sponsor Us!</a></li>
+		</ul>
+		<button id="modalopen"><i class="fa fa-bars fa-2x"></i></button>
+	  </nav>
+	</div>
+	<div id="sidemodal">
+	  <div id="sidemodalstuff" class="w3-animate-right">
+	    <h1 id="modalnavlogo">Le Fast<span>.</span></h1>
+        <span id="closemodal" class="modalitemhead">&times;</span>
+		<ul id="modallist">
+	      <li><a href="#" style="text-decoration:none"><hr>Home<hr></a></li>
+	      <li><a href="#" style="text-decoration:none">Map<hr></a></li>
+	      <li><a href="#" style="text-decoration:none">Feedback<hr></a></li>
+	      <li><a href="#" style="text-decoration:none">E-Scooter<hr></a></li>
+	      <li><a href="#" style="text-decoration:none">Sponsor Us!<hr></a></li>
+		</ul>
+	  </div>
+	</div>
+
+	<div class="container mx-auto" id="section0">
+
+    <form>
+
+        <fieldset class="form-group"  style = "color:limegreen;">
+
+            <h3>Get the Estimated Time from your Boarding Station to Alighting Station</h3>
+
+            <div  class = "col-xs-3">
+              <label for = "boardstation"> Boarding Station: </label>
+              <input type = "text" id = "boardstation" name = "boardstation" class="form-control" placeholder = "Choose your Boarding Station"/> <br>
+                <label for = "alightstation"> Alighting Station: </label>
+
+              <input type = "text" id = "alightstation" name = "alightstation" class="form-control" placeholder = "Choose your Alighting Station"/>
+             <button type="submit" class="btn btn-success" style="margin-top:3%;">Submit</button>
+            </div>
+
+        </fieldset>
+     </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Le Fast. | Profile</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="../static/css/font-awesome-4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../static/css/profile.css">
+	<link rel="stylesheet" href="../static/css/MainR.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+  </head>
+  <body>
+  <div class="container" id="navdiv">
+	  <nav>
+		<h1 id="navlogo">Le Fast<span> | Profile</span></h1>
+	    <ul id="navlist">
+		  <li class="navitem"><a class="itemA" href="MainR.html" style="text-decoration:none">Home</a></li>
+            <li class="dropdown navitem">
+                <a class="dropdown-toggle itemA" data-toggle="dropdown" href="#" style="text-decoration:none">Le Apps
+                <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Le Maps</a></li>
+                <li><a href="#">Le News</a></li>
+                <li><a href="{{ url_for('EScooter') }}">E-Scooter</a></li>
+            </ul>
+            </li>
+            <li class="dropdown navitem">
+                <a class="dropdown-toggle itemA" data-toggle="dropdown" href="#" style="text-decoration:none">My Profile!
+                <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('profile') }}">View Profile</a></li>
+                <li><a href="#">Edit Profile</a></li>
+                {% endif %}
+                {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('logout') }}">Log out</a></li>
+                {% else %}
+                <li><a href="{{ url_for('login') }}">Log in</a></li>
+                {% endif %}
+            </ul>
+            </li>
+		</ul>
+		<button id="modalopen"><i class="fa fa-bars fa-2x"></i></button>
+	  </nav>
+	</div>
+	<div id="sidemodal">
+	  <div id="sidemodalstuff" class="w3-animate-right">
+	    <h1 id="modalnavlogo">Le Fast<span>.</span></h1>
+        <span id="closemodal" class="modalitemhead">&times;</span>
+		<ul id="modallist"><hr>
+	      <li><a href="#" style="text-decoration:none">Home</a></li><hr>
+	      <li><a href="#" style="text-decoration:none">Le Maps</a></li><hr>
+	      <li><a href="{{ url_for('feedback') }}" style="text-decoration:none">Feedback</a></li><hr>
+	      <li><a href="{{ url_for('EScooter') }}" style="text-decoration:none">E-Scooter</a></li><hr>
+	      <li><a href="#" style="text-decoration:none">Sponsor Us!</a></li><hr>
+			<li><a href="http://127.0.0.1:5000/feedback" style="text-decoration:none">Report!</a></li><hr>
+		</ul>
+	  </div>
+	</div>
+  <br><br><br><br>
+  <div class="container-fluid" id ="sectionBorder">
+      {% if current_user.is_authenticated %}
+      <div class="container">
+  <div class="row">
+    <div class="col align-self-center">
+        <br>
+      <img id="avatar" src="../static/images/avatar.png" style="border:1px solid black;">
+    </div>
+    <div class="col align-self-center">
+        {% for realInformations in stats %}
+      <h1 id="myName" >{{ stats[realInformations].name }}</h1>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+  <nav class="navbar navbar-inverse sidebar" role="navigation">
+    <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Apps | Profile</a>
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+				<li ><a href="#">Profile<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+                <li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Apps<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-phone"></span></a>
+					<ul class="dropdown-menu forAnimate" role="menu">
+						<li><a href="#">E-Scooter</a></li>
+                        <li><a href="#">Le Maps</a></li>
+                        <li><a href="#">Le News</a></li>
+					</ul>
+				</li>
+                <li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
+					<ul class="dropdown-menu forAnimate" role="menu">
+						<li><a href="#">Edit Account</a></li>
+						<li><a href="#">Delete Account</a></li>
+\					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+    </div>
+      <div class="container" style="margin-right: 5%">
+      <div class="col-md-10">
+            <div class="boxed">
+                <h1> Welcome to Le Fast!</h1>
+                <p>This profile page is still in its developement stage! Feel free to explore the apps that we provided!</p>
+                {% for realInformations in stats %}
+                    <h3>Name: {{ stats[realInformations].name }}</h3>
+                    <h3>Email: {{ stats[realInformations].email }}</h3>
+                    <h3>Credit Card Number: {{ stats[realInformations].cardNumber }}</h3>
+                    <h3>Membership: ()</h3>
+                {% endfor %}
+            </div>
+      </div>
+  </div>
+  </div>
+  {% endif %}
+  </body>
+  <footer>
+  	<script type="text/javascript" src="../static/js/MainR.js"></script>
+      <script type="text/javascript" src="../static/js/profile.js"></script>
+	    <link href="https://snatchbot.me/sdk/webchat.css" rel="stylesheet" type="text/css"> <script src="https://snatchbot.me/sdk/webchat.min.js"></script> <script> Init('?botID=5703&appID=kZIMdkF9NNlBXiP8noRj', 600, 600, 'http://media.snatchbot.s3-website-us-east-1.amazonaws.com/media/image/1509451827waUQ9sjNpB', 'bubble', '#00AFF0', 90, 90, 62.99999999999999, '', '0'); /* for authentication of its users, you can define your userID (add &userID={login}) */ </script>
+  </footer>
+</html>

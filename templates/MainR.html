@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Le Fast.</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="../static/css/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/css/MainR.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+  </head>
+  <body>
+  <div class="container" id="navdiv">
+	  <nav>
+		<h1 id="navlogo">Le Fast<span>.</span></h1>
+	    <ul id="navlist">
+		  <li class="navitem"><a class="itemA" href="MainR.html" style="text-decoration:none">Home</a></li>
+		  <li class="navitem"><a class="itemA" href="#" style="text-decoration:none">Map</a></li>
+		  <li class="navitem"><a class="itemA" href="{{ url_for('feedback') }}" style="text-decoration:none">Feedback</a></li>
+		  <li class="navitem"><a class="itemA" href="{{ url_for('EScooter') }}" style="text-decoration:none">E-Scooter</a></li>
+		  <li class="navitem"><a class="itemA" href="#" style="text-decoration:none">Sponsor Us!</a></li>
+		</ul>
+		<button id="modalopen"><i class="fa fa-bars fa-2x"></i></button>
+	  </nav>
+	</div>
+	<div id="sidemodal">
+	  <div id="sidemodalstuff" class="w3-animate-right">
+	    <h1 id="modalnavlogo">Le Fast<span>.</span></h1>
+        <span id="closemodal" class="modalitemhead">&times;</span>
+		<ul id="modallist"><hr>
+	      <li><a href="#" style="text-decoration:none">Home</a></li><hr>
+	      <li><a href="#" style="text-decoration:none">Map</a></li><hr>
+	      <li><a href="{{ url_for('feedback') }}" style="text-decoration:none">Feedback</a></li><hr>
+	      <li><a href="{{ url_for('EScooter') }}" style="text-decoration:none">E-Scooter</a></li><hr>
+	      <li><a href="#" style="text-decoration:none">Sponsor Us!</a></li><hr>
+			<li><a href="http://127.0.0.1:5000/feedback" style="text-decoration:none">Report!</a></li><hr>
+		</ul>
+	  </div>
+	</div>
+	<div class="container mx-auto" id="section0">
+	  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+		  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		  <li data-target="#myCarousel" data-slide-to="1"></li>
+		  <li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+		  <div class="item active">
+			<img src="../static/images/home.png" alt="Home" style="width:100%;">
+			  <div class="carousel-caption d-none d-md-block">
+				  <div class="carousel-caption">
+					  <a class="ghost" href="http://127.0.0.1:5000/login">Get Started</a>
+				  </div>
+			  </div>
+		  </div>
+
+		  <div class="item">
+			<img src="../static/images/ios.png" alt="IOS" style="width:100%;">
+		  </div>
+		
+		  <div class="item">
+			<img src="../static/images/andriod.png." alt="Andriod" style="width:100%;">
+		  </div>
+		</div>
+
+		<!-- Left and right controls -->
+		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		  <span class="glyphicon glyphicon-chevron-left"></span>
+		  <span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#myCarousel" data-slide="next">
+		  <span class="glyphicon glyphicon-chevron-right"></span>
+		  <span class="sr-only">Next</span>
+		</a>
+	  </div>
+	</div>
+	<div class="container-fluid" id="section1">
+	  <div class="container sectionbox">
+	    <h2 class="sectionboxhead">Our Services</h2>
+		  <div class="row">
+		    <div class="col-md-8 col-md-offset-2">
+		      <h3>E-Scooter allows you to travel faster for a short distance.</h3>
+			</div>
+		  </div>
+		<div class="row sectionboxcontent">
+		  <div class="col-md-4">
+		  	<div class="icon"><span><i class="icon-mustache"></i></span></div>
+		    <h3>30 Minutes for 50 cents!</h3>
+		    <p class="sectionboxtext">Tired of wasting so much money to grab a cab or grab car? No worries just go down to the nearest mrt station and grab a E-Scooter!</p>
+		  </div>
+		  <div class="col-md-4">
+			<div class="icon"><span><i class="icon-heart"></i></span></div>
+		    <h3>Available in most MRT stations!</h3>
+		    <p class="sectionboxtext">Tired of waiting for MRT? NO worries! Head down outside the MRT station to unlock your E-Scooter!</p>
+		  </div>
+		  <div class="col-md-4">
+			<div class="icon"><span><i class="icon-screen-desktop"></i></span></div>
+		    <h3>Memberships</h3>
+		    <p class="sectionboxtext">Adding membership perks to your E-Scooter account not only unlock Le News and Le Map, it also provides more features for our E-Scooter page!</p>
+		  </div>
+		</div>
+	  </div>
+	  
+	  <div class="container sectionbox">
+	    <h2 class="sectionboxhead">How to use the E-Scooter?</h2>
+		  <div class="row">
+		    <div class="col-md-8 col-md-offset-2">
+		      <h3>E-Scooter allows you to travel faster for a short distance.</h3>
+			</div>
+		  </div>
+		<div class="row sectionboxcontent">
+		  <div class="col-md-4">
+		  	<div class="icon"><span><i class="icon-mustache"></i></span></div>
+		    <h3>Step 1: Search</h3>
+		    <p class="sectionboxtext">You can search for the nearest E-Scooter by using the search feature avaliable in our app!</p>
+		  </div>
+		  <div class="col-md-4">
+			<div class="icon"><span><i class="icon-heart"></i></span></div>
+		    <h3>Step 2: Unlock</h3>
+		    <p class="sectionboxtext">After you have found your desired E-Scooter, you can go down and use the QR code scanner to unlock your E-Scooter by scanning the QR code avaliable on our E-Scooter.</p>
+		  </div>
+		  <div class="col-md-4">
+			<div class="icon"><span><i class="icon-screen-desktop"></i></span></div>
+		    <h3>Step 3: Ride Away</h3>
+		    <p class="sectionboxtext">Now you are free to ride your E-Scooter away and always remember safety first!</p>
+		  </div>
+		</div>
+	  </div>
+	  
+	</div>
+	<div class="container mx-auto" id="section2">
+	  <div class="container sectionbox">
+	    <h2 class="sectionboxhead">Pricing</h2>
+		<div class="col-md-8 col-md-offset-2">
+		  <h3>Here you can buy different packages to enhance your experience.</h3>
+		</div>
+		<div class="row sectionboxcontent" style="margin-top:15%">
+		  <div class="col-md-3 col-sm-6">
+			<div class="price-box">
+			  <h2 class="priceboxhead">Free</h2>
+			  <div class="price">
+			    <sup class="currency">$</sup>7<small>/mo</small>
+			  </div>
+			  <p>The most basic package</p><hr>
+			  <ul class="pricing-info">
+				<li class="sectionboxtext">30 days trial-real-time updates</li>
+				<li class="sectionboxtext">30 days trial-road guides</li>
+			    <li class="sectionboxtext">Bonus $2 starting balance</li>
+				<li class="sectionboxtext">Basic access to our page</li>
+			  </ul><hr>
+			  <a href="#" class="btn btn-default btn-sm">Get started</a><hr>
+			</div>
+		  </div>
+		  <div class="col-md-3 col-sm-6">
+			<div class="price-box">
+			  <h2 class="priceboxhead">Gold</h2>
+			  <div class="price">
+				<sup class="currency">$</sup>19<small>/mo</small>
+		      </div>
+			  <p>Basic package</p><hr>
+			  <ul class="pricing-info">
+				<li class="sectionboxtext">40 days free-trial real-time updates</li>
+				<li class="sectionboxtext">40 days free-trial road guides</li>
+			    <li class="sectionboxtext">Bonus $4 starting balance</li>
+				<li class="sectionboxtext">Basic access to our webpage</li>
+			  </ul><hr>
+			  <a href="http://127.0.0.1:5000/login" class="btn btn-default btn-sm">Get started</a><hr>
+			</div>
+		  </div>
+		  <div class="col-md-3 col-sm-6">
+			<div class="price-box">
+			  <h2 class="priceboxhead">Diamond</h2>
+			  <div class="price">
+				<sup class="currency">$</sup>79<small>/mo</small>
+			  </div>
+		      <p>Advanced package</p><hr>
+		      <ul class="pricing-info">
+				<li class="sectionboxtext">Unlimited access-real-time updates</li>
+			    <li class="sectionboxtext">60 days trial-road guides</li>
+			    <li class="sectionboxtext">Bonus $8 starting balance</li>
+				<li class="sectionboxtext">Advanced access to our page</li>
+			  </ul><hr>
+			  <a href="http://127.0.0.1:5000/login" class="btn btn-default btn-sm">Get started</a><hr>
+			</div>
+		  </div>
+		  <div class="col-md-3 col-sm-6">
+			<div class="price-box">
+			  <h2 class="priceboxhead">Challenger</h2>
+			  <div class="price">
+				<sup class="currency">$</sup>125<small>/mo</small>
+		      </div>
+			  <p>Package for the elites</p><hr>
+		      <ul class="pricing-info">
+				<li class="sectionboxtext">Unlimited access-real-time updates</li>
+				<li class="sectionboxtext">Unlimited access-road guides</li>
+			    <li class="sectionboxtext">Bonus $10 starting balance</li>
+				<li class="sectionboxtext">Advanced access to our page</li>
+			  </ul><hr>
+			  <a href="http://127.0.0.1:5000/login" class="btn btn-default btn-sm">Get started</a><hr>
+			</div>
+	      </div>
+		</div>
+	  </div>
+	</div>
+	
+	<div class="container mx-auto" id="section3">
+		  <div class="container sectionbox">
+			  <center>
+	    <h2 class="sectionboxhead">Features:</h2>
+		  <div class="row">
+		    <div class="col-md-8 col-md-offset-2">
+		      <h3>New features that allow you to travel smoother!</h3>
+			</div>
+		  </div>
+			  </center>
+		<div class="row sectionboxcontent">
+		  <div class="col-md-4">
+		  	<div class="icon"><span><i class="icon-mustache"></i></span></div>
+		    <h3>Eco-Friendly</h3>
+		    <p class="sectionboxtext">This E-Scooter is Eco-Friendly and it uses solar power to power the vehicle!</p>
+		  </div>
+		  <div class="col-md-4">
+			<div class="icon"><span><i class="icon-heart"></i></span></div>
+		    <h3>Shelter Provided!</h3>
+		    <p class="sectionboxtext">Have you found that it is impossible to travel when it is raining? No fear! Our E-Scooters are equiped with shelters to prevent you from getting wet!</p>
+		  </div>
+		  <div class="col-md-4">
+			<div class="icon"><span><i class="icon-screen-desktop"></i></span></div>
+		    <h3>Fast and Efficient!</h3>
+		    <p class="sectionboxtext">It is powered by motor therefore it is faster than other similar services! You can reach from place to place fast enough!</p>
+		  </div>
+		</div>
+	  </div>
+
+	</div>
+	</div>
+  </body>
+  <footer>
+  	<script type="text/javascript" src="../static/js/MainR.js"></script>
+	    <link href="https://snatchbot.me/sdk/webchat.css" rel="stylesheet" type="text/css"> <script src="https://snatchbot.me/sdk/webchat.min.js"></script> <script> Init('?botID=5703&appID=kZIMdkF9NNlBXiP8noRj', 600, 600, 'http://media.snatchbot.s3-website-us-east-1.amazonaws.com/media/image/1509451827waUQ9sjNpB', 'bubble', '#00AFF0', 90, 90, 62.99999999999999, '', '0'); /* for authentication of its users, you can define your userID (add &userID={login}) */ </script>
+  </footer>
+</html>
